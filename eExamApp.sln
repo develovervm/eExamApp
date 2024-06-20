@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34330.188
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "eExamApp", "eExamApp\eExamApp.csproj", "{2910AA68-7C9A-4ED1-8706-1275AD97A6A6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccess", "DataAccess\DataAccess.csproj", "{91D70722-FC87-4CF2-96BF-80660ADCE1C6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "eExam.Core", "eExam.Core\eExam.Core.csproj", "{07BDBF0A-F2CF-42D0-890D-B7142573E666}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2910AA68-7C9A-4ED1-8706-1275AD97A6A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2910AA68-7C9A-4ED1-8706-1275AD97A6A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2910AA68-7C9A-4ED1-8706-1275AD97A6A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2910AA68-7C9A-4ED1-8706-1275AD97A6A6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{91D70722-FC87-4CF2-96BF-80660ADCE1C6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{91D70722-FC87-4CF2-96BF-80660ADCE1C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{91D70722-FC87-4CF2-96BF-80660ADCE1C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{91D70722-FC87-4CF2-96BF-80660ADCE1C6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{07BDBF0A-F2CF-42D0-890D-B7142573E666}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{07BDBF0A-F2CF-42D0-890D-B7142573E666}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{07BDBF0A-F2CF-42D0-890D-B7142573E666}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{07BDBF0A-F2CF-42D0-890D-B7142573E666}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4F491D57-7415-4FD4-AADD-7B7B4C23A687}
+	EndGlobalSection
+EndGlobal
