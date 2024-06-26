@@ -1,0 +1,42 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model eExamApp.Models.CourseVM
+
+<div>
+
+    @using (Html.BeginForm())
+    {
+        <div class="form-horizontal">
+            <h4>Course Details</h4>
+            <hr />
+            @Html.HiddenFor(x=>x.Id)
+            <div class="form-group">
+                <label>Course Name</label>
+                <div class="col-md-10">
+                    @Html.TextBoxFor(x => x.CourseName, new { @class = "form-control" })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(x => x.CourseCode, new { @class = "control-lable col-md-2" })
+                <div class="col-md-10">
+                    @Html.TextBoxFor(x => x.CourseCode, new { @class = "form-control" })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(x => x.CourseDescription, new { @class = "control-lable col-md-2" })
+                <div class="col-md-10">
+                    @Html.TextBoxFor(x => x.CourseDescription, new { @class = "form-control" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="@ViewBag.Action" class="btn btn-primary mt-2" />
+                </div>
+            </div>
+        </div>
+    }
+</div>

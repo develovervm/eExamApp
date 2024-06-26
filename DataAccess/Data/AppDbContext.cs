@@ -13,6 +13,7 @@ namespace DataAccess.Data
         public AppDbContext(DbContextOptions options):base(options) { }
         
         public DbSet<User> Users {  get; set; }   
+        public DbSet<Course> Courses { get; set; }
         
 }
 }

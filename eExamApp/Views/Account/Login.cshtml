@@ -9,12 +9,12 @@
     <form class="row g-3" asp-controller="Account" asp-action="LogIn">
         <div class="col-md-6">
             <label for="inputEmail4" class="form-label">User Name</label>
-            @Html.TextBoxFor(x=>x.Name,new {@class="form-comtrol",@id="txtUserName"})
+            @Html.TextBoxFor(x=>x.Name,new {@class="form-control",@id="txtUserName"})
             
         </div>
         <div class="col-md-6">
             <label for="inputPassword4" class="form-label">Password</label>
-            @Html.TextBoxFor(x => x.Password, new { @class = "form-comtrol", @id = "txtPassword" })
+            @Html.TextBoxFor(x => x.Password, new { @class = "form-control", @id = "txtPassword" })
 
         </div>
 
