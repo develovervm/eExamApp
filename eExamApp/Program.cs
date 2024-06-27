@@ -17,7 +17,8 @@ builder.Services.AddScoped<IAccountService,AccountService>();
 builder.Services.AddScoped<IUserRepository,UserRepository>();
 builder.Services.AddScoped<ICourseRepository,CourseRepository>();
 builder.Services.AddScoped<ICourseService,CourseService>();
-
+builder.Services.AddScoped<ISubjectRepository,SubjectRepository>();
+builder.Services.AddScoped<ISubjectService,SubjectService>();
 
 
 builder.Services.AddControllersWithViews();

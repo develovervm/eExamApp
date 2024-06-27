@@ -1,0 +1,22 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<a class="btn btn-primary" id="addSubject" onclick="addSubject()">Add Subject</a>
+
+<div class="container" id="mainDiv">
+
+</div>
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+<script type="text/jscript">
+
+    $(document).ready(function () {
+        $("#mainDiv").load('/Subject/SubjectList');
+    });
+
+    function addSubject() {
+        $("#mainDiv").load('/Subject/AddSubject');
+    }
+    
+</script>

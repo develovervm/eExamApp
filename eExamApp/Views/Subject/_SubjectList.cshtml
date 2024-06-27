@@ -1,0 +1,37 @@
+﻿
+@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Subject Name</th>
+            <th scope="col">Subject Type</th>
+            <th scope="col">Semester</th>
+            <th scope="col">Course</th>
+            <th scope="col">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var subject in ViewBag.SubjectList)
+        {
+            <tr>
+                <th scope="row">@subject.Id</th>
+                <td>@subject.SubjectName</td>
+                <td>@subject.SubjectType</td>
+                <td>@subject.Semester</td>
+                <td>@subject.CourseId</td>
+                <th>
+                    <a class="btn" name="update" asp-area="" asp-controller="Course" asp-action="EditCourse" ><i class="bi bi-pencil-square"></i></a>
+                    <a class="btn" name="delete" asp-area="" asp-controller="Course" asp-action="DeleteCourse" >Delete <i class="bi bi-trash3-fill"></i></a>
+
+
+                </th>
+            </tr>
+        }
+
+
+    </tbody>
+</table>

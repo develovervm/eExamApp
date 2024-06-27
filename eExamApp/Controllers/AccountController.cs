@@ -31,7 +31,8 @@ namespace eExamApp.Controllers
                 Value = "2"
             };
 
-            dllUserType.Add(option1); dllUserType.Add(option2);
+            dllUserType.Add(option1); 
+            dllUserType.Add(option2);
             var userVM = new UserVM();
             userVM.UserTypes = dllUserType;
             return View(userVM);
