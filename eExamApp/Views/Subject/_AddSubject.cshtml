@@ -2,7 +2,7 @@
 
 <div>
 
-    @using (Html.BeginForm())
+    @using (Html.BeginForm(new {@id="frmSubject" }))
     {
         <div class="form-horizontal">
             <h4>Course Details</h4>
@@ -31,9 +31,34 @@
 
             <div class="form-group">
                 <div class="col-md-offset-2 col-md-10">
-                    <input type="submit" value="@ViewBag.Action" class="btn btn-primary mt-2" />
+                    <input type="submit" id="btnsubmit" value="@ViewBag.Action" class="btn btn-primary mt-2" />
                 </div>
             </div>
         </div>
     }
 </div>
+
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+<script type="text/jscript">
+
+    $(document).ready(function () {
+        alert('Add Subject Load')
+        $("#btnsubmit").click(function (e) {
+            //Serialize the form datas.
+            var valdata = $("#frmSubject").serialize();
+            //to get alert popup
+            alert(valdata);
+            $.ajax({
+                url: "/Subject/AddSubject",
+                type: "POST",
+                dataType: 'json',
+                contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+                data: valdata
+            });
+        });
+    });
+        });
+
+   
+
+</script>

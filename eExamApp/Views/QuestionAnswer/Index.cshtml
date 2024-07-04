@@ -1,0 +1,56 @@
+﻿@model eExamApp.Models.QuestionAnswerVM
+
+<div>
+
+    @using (Html.BeginForm(new { @id = "frmQuestionAnswer" }))
+    {
+        <div class="form-horizontal">
+            <h4>Add Question</h4>
+            <hr />
+            @Html.HiddenFor(x => x.Id)
+            <div class="form-group">
+                <label>Select Subject</label>
+                <div class="col-md-10">
+                    
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Question</label>
+                <div class="col-md-10">
+                    @Html.TextBoxFor(x => x.Question, new { @class = "form-control" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Option 1</label>
+                <div class="col-md-6">
+                    @Html.TextBoxFor(x => x.AnswerOption1, new { @class = "form-control" })
+                
+               
+                    <input class="form-check-input" type="radio" name="correctAnswerOption" id="option1">
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Option 2</label>
+                <div class="col-md-6">
+                    @Html.TextBoxFor(x => x.AnswerOption2, new { @class = "form-control" })
+                
+                    <input class="form-check-input" type="radio" name="correctAnswerOption" id="option2">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" id="btnsubmit" value="@ViewBag.Action" class="btn btn-primary mt-2" />
+                </div>
+            </div>
+        </div>
+    }
+</div>
+
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+<script type="text/jscript">
+
+  
+
+</script>

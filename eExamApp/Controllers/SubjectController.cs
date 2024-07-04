@@ -1,8 +1,10 @@
 ﻿using DataAccess.Entities;
 using eExam.Core.Interfaces;
+using eExamApp.Helpers;
 using eExamApp.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using System;
 
 namespace eExamApp.Controllers
 {
@@ -27,30 +29,51 @@ namespace eExamApp.Controllers
         }
         public PartialViewResult AddSubject()
         {
-            var courseList=_courseService.GetAllCourses();
-            var dllCourse = new List<SelectListItem>();
-            foreach (var course in courseList)
-            {
-                var courseItem = new SelectListItem()
-                {
-                    Value = course.Id.ToString(),
-                    Text = course.CourseName
-                };
-                dllCourse.Add(courseItem);
-            }
+            
             SubjectVM subjectVM=new SubjectVM();
 
             //DropdownBinding
-            subjectVM.CourseList=dllCourse;
-            subjectVM.SemesterList=GetSemesterList();
+            subjectVM.CourseList= GetCoueses(0);
+            //subjectVM.SemesterList=GetSemesterList();
+            ViewBag.Action = "Save";
+            subjectVM.SemesterList = EnumHelper.GetSelectedListItems<Semesters>();
             subjectVM.SubjectTypeList = GetSubjectTypeList();
 
             return PartialView("_AddSubject", subjectVM);
         }
+        [HttpPost]
+        public ActionResult AddSubject(SubjectVM subjectVM)
+        {
 
+            return RedirectToAction("Index");
+        }
+
+        public PartialViewResult GetSubject(int subjectId)
+        {
+            var subject=_subjectService.GetSubject(subjectId);
+            SubjectVM subjectVM = new SubjectVM();
+            subjectVM.SubjectName = subject.SubjectName;
+            //DropdownBinding
+
+            subjectVM.CourseList = GetCoueses(subject.CourseId);
+            //subjectVM.SemesterList=GetSemesterList();
+            ViewBag.Action = "Update";
+            subjectVM.SemesterList = EnumHelper.GetSelectedListItems<Semesters>();
+            subjectVM.SubjectTypeList = GetSubjectTypeList();
+            return PartialView("_AddSubject", subjectVM);
+        }
+        public ActionResult EditSubject(int subjectId)
+        {
+            return RedirectToAction("Index");
+        }
         private List<SelectListItem> GetSubjectTypeList()
         {
             var list = new List<SelectListItem>();
+            var type0 = new SelectListItem()
+            {
+                Value = "0",
+                Text = "Select"
+            };
             var type1 = new SelectListItem()
             {
                 Value = "1",
@@ -61,11 +84,32 @@ namespace eExamApp.Controllers
                 Value = "2",
                 Text = "Practical"
             };
+            list.Add(type0); 
             list.Add(type1);
             list.Add(type2);
             return list;
         }
+        private List<SelectListItem> GetCoueses(int selectedId)
+        {
+            var courseList = _courseService.GetAllCourses();
+            var dllCourse = new List<SelectListItem>();
+            dllCourse.Add(new SelectListItem() { Value = "0", Text = "Select" });
+            foreach (var course in courseList)
+            {
+                var courseItem = new SelectListItem()
+                {
 
+                    Value = course.Id.ToString(),
+                    Text = course.CourseName
+                };
+                if(selectedId > 0 && selectedId==course.Id)
+                {
+                    courseItem.Selected = true;
+                }
+                dllCourse.Add(courseItem);
+            }
+            return dllCourse;
+        }
         private List<SelectListItem> GetSemesterList()
         {
             var list= new List<SelectListItem>();

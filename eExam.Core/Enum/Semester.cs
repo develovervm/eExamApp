@@ -8,6 +8,7 @@ namespace eExam.Core.Enum
 {
     public enum Semesters : int
     {
+        Select=0,
         I = 1,
         II = 2,
         III = 3,

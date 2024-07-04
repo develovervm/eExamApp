@@ -11,5 +11,6 @@ namespace eExam.Core.Interfaces
     {
         Subject AddSubject(Subject subject);
         List<Subject> GetSubjects();
+        Subject GetSubject(int id);
     }
 }

@@ -25,5 +25,9 @@ namespace eExam.Core.Services
         {
             return _subjectRepo.GetAll();
         }
+        public Subject GetSubject(int id)
+        {
+            return _subjectRepo.GetById(id);
+        }
     }
 }

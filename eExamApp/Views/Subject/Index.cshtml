@@ -10,7 +10,7 @@
 </div>
 <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 <script type="text/jscript">
-
+    var subjectData;
     $(document).ready(function () {
         $("#mainDiv").load('/Subject/SubjectList');
     });
@@ -18,5 +18,24 @@
     function addSubject() {
         $("#mainDiv").load('/Subject/AddSubject');
     }
+
+    function edit(id) {
+        
+        $.ajax({
+            url: "/Subject/GetSubject",
+            type: "get",
+            dataType: 'json',
+            contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+            data: { subjectId: id },
+            success: function (data) {
+                console.log(data);
+                subjectData=data;
+
+            }
+        });
+        //$("#mainDiv").load('/Subject/AddSubject');
+    };
+
+
     
 </script>
